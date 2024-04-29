@@ -1,0 +1,38 @@
+﻿@model DemoShoppingWebside.Models.table_Member
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<hr />
+<div>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserId)<br />
+            @Html.TextBoxFor(m => m.UserId, new { required = "required" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)<br />
+            @Html.TextBoxFor(m => m.Password, new { required = "required" })
+        </div>
+
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="login" value="登入" class="btn btn-primary">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+</div>

@@ -1,0 +1,43 @@
+﻿@model  DemoShoppingWebside.Models.table_Member
+@{ 
+    ViewBag.Title = "會員註冊";
+}
+
+<h2>會員註冊</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(Model=>Model.UserId, htmlAttributes:  new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(Model => Model.Password, htmlAttributes: new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(Model => Model.Name, htmlAttributes: new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(Model => Model.Email, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="註冊" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
